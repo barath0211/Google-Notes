@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/93e21165b6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=PT+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="code.js"></script>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<div class="nav-bar">
+    <i class="fa-solid fa-bars fa-lg"></i>
+    <img src="/Images/keep_2020q4_48dp.png" alt="Google keep Image">   <h3>Keep</h3>
+    <div class="search-box">
+        <img src="/Images/fa0e7b992eff03c576727e95c746005c.jpg">
+        <!-- <i class="fa-light fa-magnifying-glass"></i> -->
+        <input type="text" class="box" placeholder="             Search                                                                                                                                         X"> 
+    <div class="refresh">
+        <img src="/Images/refresh.png" alt="Refresh button">
+    </div>
+    <div class="pause">
+        <img src="/Images/pause-button.png" alt="Pause button">
+    </div>
+        <div class="setting">
+          <img src="/Images/setting.png" alt="Setting">
+        </div>
+        <div class="apps-icon">
+          <img src="/Images/application.png" alt="Google Apps Icon">
+        </div>
+        <div class="img-icon">
+          <img src="/Images/logo.png" alt="Photo Icon">
+        </div>
+      </div>
+    </div>
+    <hr>
+ <div class="left-buttons">
+  <div class="notes">
+    <button class="note-button" onclick="changeColor()">
+    <img src="/Images/bulb.png" alt="Bulb icon">
+    <h3>Notes</h3>
+  </button>
+</div>
+   <div class="remainder">
+    <button class="remainder-button">
+       <img src="/Images/notification.png" alt="Bell icon">
+       <h3>Remainder</h3>
+    </button>
+   </div>
+   <div class="edit">
+    <button class="edit-button">
+       <img src="/Images/pen.png" alt="Pen icon">
+       <h3>Edit</h3>
+       </button>
+   </div>
+   <div class="archive">
+    <button class="archive-button">
+    <img src="/Images/download-button.png" alt="Archive icon">
+    <h3>Archive</h3>
+    </button>
+</div>
+<div class="trash">
+  <button class="trash-button">
+  <img src="/Images/trash.png" alt="Trash icon">
+  <h3>Trash</h3>
+  </button>
+</div>
+ </div>
+
+ <div class="modal">
+  <div class="modal-content">
+    <input class="modal-title" placeholder="Title" type="text">
+    <input class="modal-text" placeholder="Take a note..." type="text">
+    <span class="modal-close-button">Close</span>
+  </div>
+</div>
+<main>
+  <!-- <header>
+    <img class="header-logo" src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png">
+    <h2 class="header-title">Keep</h2>
+  </header> -->
+  <div id="form-container">
+    <form id="form" autocomplete="off">
+      <input id="note-title" placeholder="Title" type="text">
+      <input id="note-text" placeholder="Take a note..." type="text">
+      <div id="form-buttons">
+        <button type="submit" id="submit-button">Submit</button>
+        <button type="button" id="form-close-button">Close</button>
+      </div>
+    </form>
+  </div>
+  <div id="notes"></div>
+  <div id="placeholder">
+    <p id="placeholder-text">Notes you add appear here</p>
+  </div>
+  <div id="color-tooltip">
+    <div class="color-option" data-color="#fff" id="white"></div>
+    <div class="color-option" data-color="#d7aefb" id="purple"></div>
+    <div class="color-option" data-color="#fbbc04" id="orange"></div>
+    <div class="color-option" data-color="#a7ffeb" id="teal"></div>
+  </div>
+</main>
