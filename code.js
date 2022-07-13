@@ -49,5 +49,13 @@ class Notes {
     });
   }
 }
-
+  function showNote() {
+    let notes = localStorage.getItem("notes");
+    if(notes == null) {
+      notesObj = [];
+    }
+    else {
+      notesObj = JSON.parse(notes);
+    }
 new Notes();
+    ShowNote();
