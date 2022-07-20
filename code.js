@@ -1,61 +1,61 @@
-class Notes {
-  constructor() {
-    this.notes = JSON.parse(localStorage.getItem('notes')) || [];
-    this.title = "";
-    this.text = "";
-    this.id = "";
-    this.$placeholder = document.getElementById ("placeholder");
-    this.$form = document.getElementById ("form");
-    this.$notes = document.getElementById ("notes");
-    this.$noteTitle = document.getElementById("note-title");
-    this.$noteText = document.getElementById("note-text");
-    this.$formButtons = document.getElementById("form-buttons");
-    this.$formCloseButton = document.getElementById("form-close-button");
-    this.$modal = document.getElementsByClassName("modal");
-    this.$modalTitle = document.getElementsByClassName("modal-title");
-    this.$modalText = document.getElementsByClassName("modal-text");
-    this.$modalCloseButton = document.getElementsByClassName("modal-close-button");
-    this.render();
-    this.allEvent();
-  }
-
-  event() {
-    document.body.addEventListener("click", event => {
-      this.handleFormClick(event);
-      this.selectNote(event);
-      this.openModal(event);
-      this.deleteNote(event);
-    });
-
-    this.$form.addEventListener("submit", event => {
-      event.preventDefault();
-      const title = this.$noteTitle.value;
-      const text = this.$noteText.value;
-      const answer = title || text;
-      if (answer) {
-        // tO add note
-        this.addNote({ title, text });
-      }
-    });
-    this.$formCloseButton.addEventListener("click", event => {
-      event.preventDefault();
-      event.stopPropagation();
-      this.closeForm();
-    });
-
-    this.$modalCloseButton.addEventListener("click", event => {
-      event.preventDefault();
-      this.closeModal(event);
-    });
-  }
+// const addBox = document.querySelector(".container"),
+// myTodo = document.querySelector(".myTodo");
+// addBox.addEventListener("click",() => {
+//     myTodo.classList.add("display");
+// });
+// addBtm.addEventListener(click,e => {
+//     e.preventDefault();
+//     let noteTitle = title.value,
+//     noteDes = description.value;
+//     console.log(noteTitle,noteDes);
+// })
+const inputVal = document.getElementsByClassName('inputVal')[0];
+ const addTaskBtn = document.getElementsByClassName('btn')[0];
+addTaskBtn.addEventListener('click', function (){
+ if(inputVal.value.trim()!=0){
+      let localItems = JSON.parse( localStorage.getItem('localItem'))
+   if(localItems === null){
+        taskList = []
+   }
+   else{
+       taskList = localItems;
+   }
+   taskList.push(inputVal.value)
+   localStorage.setItem('localItem', JSON.stringify(taskList)); 
 }
-  function showNote() {
-    let notes = localStorage.getItem("notes");
-    if(notes == null) {
-      notesObj = [];
-    }
-    else {
-      notesObj = JSON.parse(notes);
-    }
-new Notes();
-    ShowNote();
+   showItem();
+})
+function showItem(){
+   let localItems = JSON.parse( localStorage.getItem('localItem'))
+   if(localItems === null)
+   {
+        taskList = []
+   }
+   else{
+       taskList = localItems;
+   }
+let html = '';
+let itemShow = document.querySelector('.todoLists');
+taskList.forEach((data, index )=> {
+   html += `
+   <div class="todoList">
+   <p class="pText">${data}</p> 
+   <button class="deleteTask" onClick="deleteItem(${index})">Delete</button>
+   <button class="editTask" onclick="editItem(${index},'${data}')">Edit</button> 
+   </div>
+   `
+})
+itemShow.innerHTML = html;
+}
+showItem();
+function deleteItem(index){
+   let localItems = JSON.parse( localStorage.getItem('localItem'))
+   taskList.splice(index, 1)
+   localStorage.setItem('localItem', JSON.stringify(taskList));
+   showItem()
+}
+// function editItem(${index},'${data}') 
+// {
+// console.log(data);
+// }
+
