@@ -63,6 +63,7 @@ function editNotes(noteId,title,description){
     tagDescription.value=description;
     addNote.click();
     addBtn.innerText= "update";
+    displayNotes();
 }
 
 
